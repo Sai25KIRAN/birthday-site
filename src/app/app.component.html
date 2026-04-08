@@ -1,0 +1,43 @@
+
+
+<div class="container">
+  <h1>🎂 Happy Birthday <span class="name">{{name}}</span> 🎉</h1>
+
+  <!-- Background Music -->
+  <audio #audioPlayer class="audio-player">
+    <source src="assets/birthday.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Name Input -->
+  <input [(ngModel)]="name" placeholder="Enter your name" class="name-input" />
+
+  <!-- Button -->
+  <button (click)="startSurprise()">Click for Surprise 🎁</button>
+
+  <!-- Photo Gallery -->
+  <div class="gallery" *ngIf="showGallery">
+    <img [src]="photos[currentPhotoIndex]" alt="Birthday photo" class="slideshow-image" />
+  </div>
+
+  <!-- Message -->
+  <div *ngIf="showMessage" class="message">
+    🎈 Wishing you happiness, success & lots of cake, {{name}}! 🎂💖
+  </div>
+
+  <!-- Fireworks -->
+  <div class="fireworks" *ngIf="showConfetti">
+    <div class="firework" *ngFor="let i of fireworkArray"></div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" *ngIf="showModal">
+    <div class="modal-content">
+      <p>Please enter your name to start the surprise!</p>
+      <button (click)="closeModal()">OK</button>
+    </div>
+  </div>
+</div>
+
+
+
+
