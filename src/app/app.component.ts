@@ -32,7 +32,8 @@ export class AppComponent implements OnInit, OnDestroy {
     'assets/sai/photo (2).jpg',
     'assets/sai/photo (3).jpg',
     'assets/sai/photo (4).jpg',
-    'assets/sai/photo (5).jpg'
+    'assets/sai/photo (5).jpg',
+    'assets/sai/photo (6).jpg'
   ];
 
   
@@ -51,8 +52,19 @@ export class AppComponent implements OnInit, OnDestroy {
     'assets/pandu/photo (6).jpg'    ,
     'assets/pandu/photo (7).jpg'    ,
     'assets/pandu/photo (8).jpg'    ,
-    'assets/pandu/photo (9).jpg'    ,
-    'assets/pandu/photo (10).jpg'
+    
+  ];
+
+  gphotos = [
+    'assets/gorri/photo(1).jpg',
+    'assets/gorri/photo(2).jpg',
+    'assets/gorri/photo(3).jpg'
+    ,
+    'assets/gorri/photo(4).jpg'
+    ,
+    'assets/gorri/photo(5).jpg',
+    'assets/gorri/photo(6).jpg'
+        
   ];
 
   currentPhotoIndex = 0;
@@ -108,7 +120,11 @@ export class AppComponent implements OnInit, OnDestroy {
       return this.sPhotos;
     } else if (lowerName.includes('pandu')) {
       return this.pphotos ;
-    } else {
+    }
+    else if (lowerName.includes('gowtham')) {
+      return this.gphotos ;
+    }
+     else {
       return this.sPhotos; // default
     }
   }
